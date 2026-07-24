@@ -1,0 +1,36 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "login": true,
+  "preferredVersions": { "php": "8.2", "wp": "latest" },
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Blog demó",
+        "blogdescription": "Blog téma + Város választó plugin bemutató",
+        "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/Slityak/wp-blog-theme/dist/blog.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/Slityak/wp-varosvalaszto/dist/varos-valaszto.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php'; $demo = ['Első blog bejegyzés' => 'Ez egy demó bejegyzés a <strong>blog</strong> egyéni bejegyzéstípusból. A főoldali táblázatból a Törlés gombbal törölhető, a törlésről az adminisztrátor e-mail értesítést kap.', 'Város választó a főoldalon' => 'A főoldal alján lévő űrlap a Város választó plugin [varos_valaszto] shortcode-ja. A mentés JavaScript nélkül, sima POST-tal működik.', 'Beállítások az adminban' => 'A városlista és az alapértelmezett érték a Beállítások → Város választó oldalon szerkeszthető.']; foreach ($demo as $title => $content) { wp_insert_post(['post_type' => 'blog', 'post_status' => 'publish', 'post_title' => $title, 'post_content' => $content]); } flush_rewrite_rules();"
+    }
+  ]
+}
