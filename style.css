@@ -1,0 +1,73 @@
+/*
+Theme Name: Blog
+Theme URI:
+Author: kornel.kovacs
+Author URI:
+Description: Blog téma – blog post type, frontend törlés, város-választó form.
+Version: 0.1.0
+Requires at least: 6.0
+Requires PHP: 8.1
+License: GPL-2.0-or-later
+Text Domain: blog
+*/
+
+.site-main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+.notice {
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.notice-success {
+    background: #e7f7ec;
+    border-color: #46b450;
+}
+
+.notice-error {
+    background: #fdeaea;
+    border-color: #dc3232;
+}
+
+.blog-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.blog-tabla th,
+.blog-tabla td {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.torles-gomb {
+    background: #dc3232;
+    color: #fff;
+    border: 0;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.torles-gomb:hover {
+    background: #a02222;
+}
+
+.varos-form {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #ddd;
+}
+
+.varos-form select,
+.varos-form button {
+    padding: 0.35rem 0.6rem;
+    font-size: 1rem;
+}
