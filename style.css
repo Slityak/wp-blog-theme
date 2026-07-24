@@ -3,8 +3,8 @@ Theme Name: Blog
 Theme URI:
 Author: kornel.kovacs
 Author URI:
-Description: Blog téma – blog post type, frontend törlés, város-választó form.
-Version: 0.1.0
+Description: Blog téma – blog post type, frontend törlés, város-választó form, fő menü és morzsamenü.
+Version: 0.2.0
 Requires at least: 6.0
 Requires PHP: 8.1
 License: GPL-2.0-or-later
@@ -17,6 +17,62 @@ Text Domain: blog
     padding: 0 1rem;
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.5;
+}
+
+.site-header {
+    border-bottom: 1px solid #ddd;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.site-nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    text-decoration: underline;
+}
+
+.site-nav a[aria-current="page"],
+.site-nav .current-menu-item > a {
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    color: #646970;
+}
+
+.breadcrumbs li + li::before {
+    content: "/";
+    margin-right: 0.5rem;
+    color: #c3c4c7;
+}
+
+.breadcrumbs a {
+    color: #2271b1;
 }
 
 .notice {

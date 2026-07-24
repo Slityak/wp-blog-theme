@@ -15,7 +15,12 @@ if (!defined('ABSPATH')) {
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<header class="site-header">
+    <?php blog_nav_menu(); ?>
+</header>
 <main class="site-main">
+    <?php blog_breadcrumbs(); ?>
+
     <h1><?php bloginfo('name'); ?></h1>
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
